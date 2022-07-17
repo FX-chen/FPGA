@@ -1,0 +1,9 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"uart_loopback_top_time_synth.v" \
+"../../../../../../../uart_loopback.v" \
+"../../../../../../../uart_tx.v" \
+"../../../../../../../uart_loopback_top.v" \
+
+# Do not sort compile order
+nosort

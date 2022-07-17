@@ -1,0 +1,239 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jul 17 22:57:31 2022
+# Process ID: 17428
+# Current directory: C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.runs/synth_1
+# Command line: vivado.exe -log uart_loopback_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_loopback_top.tcl
+# Log file: C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.runs/synth_1/uart_loopback_top.vds
+# Journal file: C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source uart_loopback_top.tcl -notrace
+Command: synth_design -top uart_loopback_top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 21692
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1005.914 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uart_loopback_top' [C:/Users/13451/Desktop/FPGA/uart/uart_loopback_top.v:2]
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter UART_BPS bound to: 115200 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [C:/Users/13451/Desktop/FPGA/uart/uart_rx.v:1]
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter UART_BPS bound to: 115200 - type: integer 
+	Parameter BPS_CNT bound to: 434 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (1#1) [C:/Users/13451/Desktop/FPGA/uart/uart_rx.v:1]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [C:/Users/13451/Desktop/FPGA/uart/uart_tx.v:2]
+	Parameter CLK_FREQ bound to: 50000000 - type: integer 
+	Parameter UART_BPS bound to: 115200 - type: integer 
+	Parameter BPS_CNT bound to: 434 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (2#1) [C:/Users/13451/Desktop/FPGA/uart/uart_tx.v:2]
+INFO: [Synth 8-6157] synthesizing module 'uart_loopback' [C:/Users/13451/Desktop/FPGA/uart/uart_loopback.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'uart_loopback' (3#1) [C:/Users/13451/Desktop/FPGA/uart/uart_loopback.v:2]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_uart_rx'. This will prevent further optimization [C:/Users/13451/Desktop/FPGA/uart/uart_loopback_top.v:25]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_uart_tx'. This will prevent further optimization [C:/Users/13451/Desktop/FPGA/uart/uart_loopback_top.v:38]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_uart_loopback'. This will prevent further optimization [C:/Users/13451/Desktop/FPGA/uart/uart_loopback_top.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'uart_loopback_top' (4#1) [C:/Users/13451/Desktop/FPGA/uart/uart_loopback_top.v:2]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1005.914 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1005.914 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1005.914 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1005.914 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.srcs/constrs_1/new/uart_constraints.xdc]
+Finished Parsing XDC File [C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.srcs/constrs_1/new/uart_constraints.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.srcs/constrs_1/new/uart_constraints.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/uart_loopback_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/uart_loopback_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1017.145 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1017.145 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1017.145 ; gain = 11.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1017.145 ; gain = 11.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1017.145 ; gain = 11.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1017.145 ; gain = 11.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 2     
++---Registers : 
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input    9 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 4     
+	   2 Input    4 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 7     
+	   3 Input    1 Bit        Muxes := 2     
+	  12 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1017.145 ; gain = 11.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1017.145 ; gain = 11.230
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1019.488 ; gain = 13.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1020.301 ; gain = 14.387
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |BUFG |     1|
+|2     |LUT1 |     3|
+|3     |LUT2 |    19|
+|4     |LUT3 |    16|
+|5     |LUT4 |    11|
+|6     |LUT5 |    17|
+|7     |LUT6 |    27|
+|8     |FDCE |    69|
+|9     |FDPE |     1|
+|10    |IBUF |     3|
+|11    |OBUF |     1|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:23 . Memory (MB): peak = 1027.113 ; gain = 9.969
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1027.113 ; gain = 21.199
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1036.359 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1040.781 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 1040.781 ; gain = 34.867
+INFO: [Common 17-1381] The checkpoint 'C:/Users/13451/Desktop/FPGA/uart/7020/uart_loopback/uart_loopback.runs/synth_1/uart_loopback_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file uart_loopback_top_utilization_synth.rpt -pb uart_loopback_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 17 22:58:08 2022...

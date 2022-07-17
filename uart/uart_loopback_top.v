@@ -1,32 +1,28 @@
 
 module uart_loopback_top(
-    input           sys_clk,            //�ⲿ50Mʱ��
-    input           sys_rst_n,          //�ⲿ��λ�źţ�����Ч
+    input           sys_clk,           
+    input           sys_rst_n,        
 
-   (*mark_debug = "true"*) input           uart_rxd,           //UART���ն˿�
-   (*mark_debug = "true"*) output          uart_txd            //UART���Ͷ˿�
+   (*mark_debug = "true"*) input           uart_rxd,         
+   (*mark_debug = "true"*) output          uart_txd         
     );
 
 //parameter define
-parameter  CLK_FREQ = 50000000;         //����ϵͳʱ��Ƶ��
-parameter  UART_BPS = 115200;           //���崮�ڲ�����
+parameter  CLK_FREQ = 50000000;      
+parameter  UART_BPS = 115200;        
     
 //wire define   
-(*mark_debug = "true"*)wire       uart_recv_done;              //UART�������
-(*mark_debug = "true"*)wire [7:0] uart_recv_data;              //UART��������
-(*mark_debug = "true"*)wire       uart_send_en;                //UART����ʹ��
-(*mark_debug = "true"*)wire [7:0] uart_send_data;              //UART��������
-(*mark_debug = "true"*)wire       uart_tx_busy;                //UART����æ״̬��־
+(*mark_debug = "true"*)wire       uart_recv_done;         
+(*mark_debug = "true"*)wire [7:0] uart_recv_data;            
+(*mark_debug = "true"*)wire       uart_send_en;          
+(*mark_debug = "true"*)wire [7:0] uart_send_data;            
+(*mark_debug = "true"*)wire       uart_tx_busy;             
 
-//*****************************************************
-//**                    main code
-//*****************************************************
-
-//���ڽ���ģ��     
-uart_recv #(                          
-    .CLK_FREQ       (CLK_FREQ),         //����ϵͳʱ��Ƶ��
-    .UART_BPS       (UART_BPS))         //���ô��ڽ��ղ�����
-u_uart_recv(                 
+   
+uart_rx #(                          
+    .CLK_FREQ       (CLK_FREQ),         
+    .UART_BPS       (UART_BPS))     
+u_uart_rx(                 
     .sys_clk        (sys_clk), 
     .sys_rst_n      (sys_rst_n),
     
@@ -35,11 +31,11 @@ u_uart_recv(
     .uart_data      (uart_recv_data)
     );
 
-//���ڷ���ģ��    
-uart_send #(                          
-    .CLK_FREQ       (CLK_FREQ),         //����ϵͳʱ��Ƶ��
-    .UART_BPS       (UART_BPS))         //���ô��ڷ��Ͳ�����
-u_uart_send(                 
+
+uart_tx #(                          
+    .CLK_FREQ       (CLK_FREQ),        
+    .UART_BPS       (UART_BPS))      
+u_uart_tx(                 
     .sys_clk        (sys_clk),
     .sys_rst_n      (sys_rst_n),
      
@@ -49,17 +45,17 @@ u_uart_send(
     .uart_txd       (uart_txd)
     );
     
-//���ڻ���ģ��    
-uart_loop u_uart_loop(
+  
+uart_loopback u_uart_loopback(
     .sys_clk        (sys_clk),             
     .sys_rst_n      (sys_rst_n),           
    
-    .recv_done      (uart_recv_done),   //����һ֡������ɱ�־�ź�
-    .recv_data      (uart_recv_data),   //���յ�����
+    .recv_done      (uart_recv_done),  
+    .recv_data      (uart_recv_data),  
    
-    .tx_busy        (uart_tx_busy),     //����æ״̬��־      
-    .send_en        (uart_send_en),     //����ʹ���ź�
-    .send_data      (uart_send_data)    //����������
+    .tx_busy        (uart_tx_busy),       
+    .send_en        (uart_send_en),    
+    .send_data      (uart_send_data)   
     );
     
 endmodule
